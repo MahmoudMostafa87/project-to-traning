@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Doctor</title>
+<link rel="stylesheet" href="../css/createDoctor.css">
+</head>
+<body>
+    <h1>Create New Doctor</h1>
+    <form id="doctorForm" enctype="multipart/form-data">
+        <label for="name">Doctor Name:</label>
+        <input type="text" id="name" autocomplete="name" name="name" required>
+        <label for="age">age:</label>
+        <input type="number" id="age" autocomplete="bday" name="age" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+        <input type="file" name="imageFile" accept="image/*" required>
+        <button type="submit">Submit</button>
+    </form>
+<div class="message" id="messageBox"></div>
+   
+</body>
+<script src="../js/createDoctor.js"></script>
+</html>

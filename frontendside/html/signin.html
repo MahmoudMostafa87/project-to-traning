@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body{
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(rgb(37, 37, 37),rgb(99, 99, 99));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    width: 50%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-evenly;
+    outline: 1px solid white;
+    /* text-align: center; */
+    align-items:start;
+}
+form div{
+    width: 100%;
+    
+}
+
+input{
+    background-color: rgba(255, 255, 255, 0);
+    border-top: none ;
+    border-right: 1px solid rgb(90, 90, 90);
+    border-bottom: 1px solid rgb(90, 90, 90);
+    border-left:none ;
+    width: 70%;
+    display: flex;
+    font-size: medium;
+    justify-content: end;
+    height: fit-content;
+    color:#011126;
+}
+input:active{
+    outline: none;
+    background-color: rgba(240, 248, 255, 0);
+    border: none;
+}
+input:focus{
+    outline: none;
+    background-color: rgba(240, 248, 255, 0);
+    border-right: 1px solid rgb(90, 90, 90);
+    border-bottom: 1px solid rgb(90, 90, 90);
+    border-top:none ;
+    border-left:none;
+}
+label{
+    border: none;
+    margin: 0;
+    padding-left:.5em;
+    font-size: medium;
+    font-weight: 600;
+}
+
+button{
+    border: none;
+    width: 100%;
+    text-align: center;
+    background-color: #066902;
+    cursor: pointer;
+    font-size: larger;
+    margin-top: 2em;
+    font-weight: 600;
+    height:2em;
+    transition: 500ms;   
+}
+
+button:hover{
+    transform: scale(1.1);
+    background-color: #022601;
+    color: rgba(255, 217, 0, 0.603);
+}
+
+.button{
+    height: 50%;
+    width: 50%;
+}
+</style>
+<body>
+       <form>
+        <div>
+            <label for="email">email</label>
+            <input type="email" id="email">
+        </div>
+
+            <div>
+                <label for="password">password</label>
+                <input type="password" id="password">
+            </div>
+        </form>
+        <div class="button">
+            <button type="submit">any</button>
+        </div>
+</body>
+</html>

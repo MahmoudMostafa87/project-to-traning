@@ -1,0 +1,152 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile Student</title>
+</head>
+<style>
+    h1{
+        text-align: center;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: center;
+        width: 100%;
+        height: 30%;
+        background-color: blue;
+    }
+
+    div{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        background-color: aquamarine;
+    }
+
+</style>
+<body>
+    <h1>Student</h1>
+
+    <div class="container">
+            <div>
+                <h2>name</h2>
+                <h3 id="h31"></h3>
+            </div>
+
+            <div>
+                <h2>age</h2>
+                <h3 id="h32"></h3>
+            </div>
+            
+            <div>
+                <h2>level</h2>
+                <h3 id="h33"></h3>
+            </div>
+
+            <div>
+                <h2>address</h2>
+                <h3 id="h34"></h3>
+            </div>
+
+    </div>
+
+        <a href="./updateStudent.html">update</a>
+        <button id="delete">delete</button>
+</body>
+<script>
+        const container=document.querySelector(".container");
+        const h31=document.getElementById("h31")
+        const h32=document.getElementById("h32")
+        const h33=document.getElementById("h33")
+        const h34=document.getElementById("h34")
+        
+let id=sessionStorage.getItem("id");
+
+
+if(!(typeof id==="string"))
+    id=JSON.stringify(sessionStorage.getItem("id"));
+
+    fetch(`http://localhost:4000/student/${id}`,{
+        method:"GET",
+        headers:{
+            "Content-Type":"application/json"
+        }
+    })
+    .then((res)=>res.json())
+    .then(data=>{
+        h31.innerText=data.name;
+        h32.innerText=data.age;
+        h33.innerText=data.level;
+        h34.innerText=data.address;
+    });
+
+    function deleteData(id){
+        fetch(`http://localhost:4000/student/${JSON.parse(id)}`,{
+            method:"DELETE",
+            headers:{
+                "Content-Type":"application/json"
+            }
+        })
+        .then(res=>res.json())
+        .then(message=>{
+            sessionStorage.removeItem("id");
+            alert(message.message);
+            window.location.href="student.html";
+        })
+        .catch(err=>alert(err));
+    }
+
+
+document.getElementById("delete").addEventListener("click",(e)=>{
+    deleteData(id);
+})    
+
+
+</script>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Profile</title>
+</head>
+<link rel="stylesheet" href="../css/studentPortfolio.css">
+<body>
+  <h1>Student Profile</h1>
+
+  <div class="container">
+    <div class="card">
+      <h2>Name</h2>
+      <h3 id="h31"></h3>
+    </div>
+    <div class="card">
+      <h2>Age</h2>
+      <h3 id="h32"></h3>
+    </div>
+    <div class="card">
+      <h2>Level</h2>
+      <h3 id="h33"></h3>
+    </div>
+    <div class="card">
+      <h2>Address</h2>
+      <h3 id="h34"></h3>
+    </div>
+
+    <div class="actions">
+      <a href="./updateStudent.html">Update</a>
+      <button id="delete">Delete</button>
+    </div>
+  </div>
+
+  <script src="../js/studentPortfolio.js"></script>
+</body>
+</html>

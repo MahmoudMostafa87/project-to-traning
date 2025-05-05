@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Student</title>
+</head>
+<link rel="stylesheet" href="../css/createStudent.css">
+<body>
+    <h1>Create New Student</h1>
+    <form id="studentForm" enctype="multipart/form-data">
+        <label for="name">Student Name:</label>
+        <input type="text" id="name" autocomplete="name" name="name" required>
+        <label for="age">age:</label>
+        <input type="number" id="age" autocomplete="bday" name="age" required>
+        <label for="level">level:</label>
+        <select id="level" name="level" required>
+            <option value="first">First</option>
+            <option value="secound">Second</option>
+            <option value="third">Third</option>
+            <option value="forth">Forth</option>
+          </select>
+        <label for="address">address:</label>
+        <input type="text" id="address" name="address" autocomplete="address-level1" required>
+        <input type="file" name="imageFile" accept="image/*" required>
+
+        <button type="submit">Submit</button>
+    </form>
+    <div class="message" id="messageBox"></div>
+
+   
+</body>
+<script src="../js/createStudent.js"></script>
+</html>

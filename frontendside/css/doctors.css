@@ -1,0 +1,169 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f9f9fb;
+    margin: 0;
+    padding: 20px;
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+  }
+
+  #doctors-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .doctor-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .doctor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .doctor-card h3 {
+    margin-top: 0;
+    color: #2c3e50;
+  }
+
+  .doctor-card p {
+    margin: 8px 0;
+    color: #555;
+  }
+
+  .doctor-card button {
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+  }
+
+  .profile {
+    background-color: #3498db;
+    color: #fff;
+  }
+
+  .profile:hover {
+    background-color: #2980b9;
+  }
+
+  .update_profile {
+    background-color: #f39c12;
+    color: #fff;
+  }
+
+  .update_profile:hover {
+    background-color: #e67e22;
+  }
+
+  .delete_profile {
+    background-color: #e74c3c;
+    color: #fff;
+  }
+
+  .delete_profile:hover {
+    background-color: #c0392b;
+  }
+
+  @media (max-width: 500px) {
+    .doctor-card button {
+      margin-bottom: 8px;
+      width: 100%;
+    }
+  }
+  /* a{
+    text-decoration: none;
+    color: #c0392b;
+    background-color:#0099ff ;
+    height: 2em;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    border-radius: 14px;
+  }
+  .create_doctor{
+    display: flex;
+    justify-content: center;
+    padding:7em;
+  } */
+
+.btn2 {
+position: relative;
+display: inline-block;
+padding: 15px 30px;
+border: 2px solid #212121;
+text-transform: uppercase;
+color: #212121;
+text-decoration: none;
+font-weight: 600;
+font-size: 20px;
+transition: 0.3s;
+}
+
+.btn2::before {
+content: '';
+position: absolute;
+top: -2px;
+left: -2px;
+width: calc(100% + 4px);
+height: calc(100% - -2px);
+background-color: #f9f9fb;
+transition: 0.3s ease-out;
+transform: scaleY(1);
+}
+
+.btn2::after {
+content: '';
+position: absolute;
+top: -2px;
+left: -2px;
+width: calc(100% + 4px);
+height: calc(100% - 50px);
+background-color: #f9f9fb;
+transition: 0.3s ease-out;
+transform: scaleY(1);
+}
+
+.btn2:hover::before {
+transform: translateY(-25px);
+height: 0;
+}
+
+.btn2:hover::after {
+transform: scaleX(0);
+transition-delay: 0.15s;
+}
+
+.btn2:hover {
+border: 2px solid #212121;
+}
+
+.btn2 span {
+position: relative;
+z-index: 3;
+}
+
+.create_doctor {
+text-decoration: none;
+border: none;
+background-color: transparent;
+}
+.have_button{
+display: flex;
+justify-content: center;
+padding: 3em;
+}
